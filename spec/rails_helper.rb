@@ -61,4 +61,12 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  # コメントアウトを外す
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+
+
+RSpec.configure do |config|
+  # 追記
+  config.include SignInSupport
 end
+ end
